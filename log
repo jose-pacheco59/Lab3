@@ -40,3 +40,29 @@ hashmap.c:74:8: error: ‘map’ is a pointer; did you mean to use ‘->’?
       |        ->
 cc1: all warnings being treated as errors
 eeb35b3
+Thu Apr 16 08:43:27 PM UTC 2026: 
+ hashmap.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:64:59: error: expected ‘;’ before ‘)’ token
+   64 |     if (map->buckets[pos] == NULL) map->buckets[pos] = new);
+      |                                                           ^
+      |                                                           ;
+hashmap.c:64:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   64 |     if (map->buckets[pos] == NULL) map->buckets[pos] = new);
+      |     ^~
+hashmap.c:64:59: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   64 |     if (map->buckets[pos] == NULL) map->buckets[pos] = new);
+      |                                                           ^
+hashmap.c:64:59: error: expected statement before ‘)’ token
+hashmap.c:66:5: error: ‘else’ without a previous ‘if’
+   66 |     else
+      |     ^~~~
+hashmap.c:78:8: error: ‘map’ is a pointer; did you mean to use ‘->’?
+   78 |     map.size++;
+      |        ^
+      |        ->
+cc1: all warnings being treated as errors
+0ce5041
