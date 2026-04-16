@@ -66,7 +66,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     else
     {       
         long i = pos + 1;
-        while (pos != NULL && key != NULL)
+        while (map->buckets[pos] != NULL && key != NULL)
             {
                 
                 if (map->buckets[i] == NULL)
