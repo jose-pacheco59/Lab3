@@ -64,14 +64,17 @@ void insertMap(HashMap * map, char * key, void * value) {
     if (map->buckets[pos] == NULL) map->buckets[pos] = new;
     
     else
-    {        
-        for (long i = pos + 1; i < map->capacity; i++)
+    {       
+        long i = pos + 1;
+        while (pos != NULL && key != NULL)
             {
+                
                 if (map->buckets[i] == NULL)
                 {
                     map->buckets[i] = new;
                     break;
                 }
+                i = (i + 1) % map->capacity;
             }
         
     }

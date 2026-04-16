@@ -88,3 +88,14 @@ Thu Apr 16 08:53:53 PM UTC 2026:
  tests:  3|6
 total_score: 5/60
 de92adc
+Thu Apr 16 08:57:38 PM UTC 2026: 
+ hashmap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:69:20: error: comparison between pointer and integer [-Werror]
+   69 |         while (pos != NULL && key != NULL)
+      |                    ^~
+cc1: all warnings being treated as errors
+8839f8f
