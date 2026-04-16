@@ -6,3 +6,37 @@ Thu Apr 16 08:02:25 PM UTC 2026:
  tests:  0|7
 total_score: 0/60
 e38a651
+Thu Apr 16 08:38:48 PM UTC 2026: 
+ hashmap.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:63:5: error: expected ‘,’ or ‘;’ before ‘long’
+   63 |     long pos = hash(key, map->capacity);
+      |     ^~~~
+hashmap.c:64:22: error: ‘pos’ undeclared (first use in this function); did you mean ‘pow’?
+   64 |     if (map->buckets[pos] == NULL) map->buckets[pos] = new);
+      |                      ^~~
+      |                      pow
+hashmap.c:64:22: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:64:59: error: expected ‘;’ before ‘)’ token
+   64 |     if (map->buckets[pos] == NULL) map->buckets[pos] = new);
+      |                                                           ^
+      |                                                           ;
+hashmap.c:64:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   64 |     if (map->buckets[pos] == NULL) map->buckets[pos] = new);
+      |     ^~
+hashmap.c:64:59: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   64 |     if (map->buckets[pos] == NULL) map->buckets[pos] = new);
+      |                                                           ^
+hashmap.c:64:59: error: expected statement before ‘)’ token
+hashmap.c:66:5: error: ‘else’ without a previous ‘if’
+   66 |     else
+      |     ^~~~
+hashmap.c:74:8: error: ‘map’ is a pointer; did you mean to use ‘->’?
+   74 |     map.size++;
+      |        ^
+      |        ->
+cc1: all warnings being treated as errors
+eeb35b3
