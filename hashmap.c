@@ -188,7 +188,7 @@ void enlarge(HashMap * map) {
 
     for (long i = 0; i < map->capacity; i++)
         {
-            insertMap(map, old_buckets->key, old_buckets->value);
+            insertMap(map, old_buckets[i]->key, old_buckets[i]->value);
         }
     free(old_buckets);
 }
