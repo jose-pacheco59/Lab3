@@ -164,6 +164,7 @@ Pair * nextMap(HashMap * map) {
 }
 
 
+
 // 6.- Implemente la función void enlarge(HashMap * map). Esta función agranda la capacidad del arreglo buckets y reubica todos sus elementos. 
 // Para hacerlo es recomendable mantener referenciado el arreglo actual/antiguo de la tabla con un puntero auxiliar. 
 // Luego, los valores de la tabla se reinicializan con un nuevo arreglo con el doble de capacidad. 
@@ -175,9 +176,21 @@ Pair * nextMap(HashMap * map) {
 //   d - Inicialice size a 0.
 //   e - Inserte los elementos válidos del arreglo old_buckets en el mapa (use la función insertMap que ya implementó).
 
+
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
+    
+    Pair ** old_buckets = map->buckets;
+    long old_cap = map->capacity;
 
+    map->capacity = map->capacity * 2;
+    map->buckets = (Pair ** ) calloc(map->capacity, sizeof(Pair *));
+    map->size = 0;
+
+    for (long i = 0; i < map->capacity; i++)
+        {
+            insertMap(map, old_buckets->key, old_buckets->value);
+        }
 
 }
 
