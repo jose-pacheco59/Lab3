@@ -105,7 +105,7 @@ Pair * searchMap(HashMap * map,  char * key) {
             if (is_equal(map->buckets[i]->key, key) == 1)
             {
                 map->current = i;
-                return map->buckets[i]->value;
+                return map->buckets[i];
             }
             i = (i + 1) % map->capacity;
             if (i == inicial) break;
