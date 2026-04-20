@@ -190,3 +190,18 @@ hashmap.c:184:10: error: unused variable ‘old_cap’ [-Werror=unused-variable]
       |          ^~~~~~~
 cc1: all warnings being treated as errors
 cf5ad2a
+Mon Apr 20 03:56:01 PM UTC 2026: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:191:39: error: ‘old_buckets’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  191 |             insertMap(map, old_buckets->key, old_buckets->value);
+      |                                       ^~
+      |                            (*         )
+hashmap.c:191:57: error: ‘old_buckets’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  191 |             insertMap(map, old_buckets->key, old_buckets->value);
+      |                                                         ^~
+      |                                              (*         )
+09112ec
